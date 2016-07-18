@@ -27,16 +27,19 @@
                 </div>
                 <div class="example ui-demo-light-stage">
                     <div class="row">
-                        <span class="cal-desc">默认样式：</span><input data-ui="type:Calendar" />
+                        <span class="cal-desc">默认样式：</span><input
+                        data-ui="type:Calendar"
+                        data-ui-extension-calendaredit-type="CalendarEdit"
+                        />
                     </div>
                     <div class="row">
-                        <span class="cal-desc">两个：</span><input data-ui="type:Calendar;id:twoMonths;twoMonths:true;" />
+                        <span class="cal-desc">两个：</span><input data-ui="type:Calendar;id:twoMonths;twoMonths:true;" data-ui-extension-calendaredit-type="CalendarEdit" />
                     </div>
                     <div class="row">
-                        <span class="cal-desc">不可用：</span><input data-ui="type:Calendar;disabled:1" />
+                        <span class="cal-desc">不可用：</span><input data-ui="type:Calendar;disabled:1" data-ui-extension-calendaredit-type="CalendarEdit" />
                     </div>
                     <div class="row">
-                        <span class="cal-desc">只读：</span><input data-ui="type:Calendar;readOnly:1" />
+                        <span class="cal-desc">只读：</span><input data-ui="type:Calendar;readOnly:1" data-ui-extension-calendaredit-type="CalendarEdit" />
                     </div>
                 </div>
                 <h2>点击自动隐藏</h2>
@@ -86,7 +89,9 @@
             [
                 'esui',
                 'esui/Calendar',
+                'esui/extension/CalendarEdit',
                 'esui/Tab',
+                'esui/TextBox',
                 'demo'
             ],
             function (ui) {
