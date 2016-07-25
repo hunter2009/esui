@@ -205,9 +205,7 @@ define(
          * 更新输入框的值
          *
          * @event
-         * @fires Calendar#change
          * @param {Object} e 事件对象
-         * @param {MonthView} e.target 当前改变值的MonthView控件
          * @ignore
          */
         function syncTextBox(e) {
@@ -221,9 +219,7 @@ define(
          * 更新日历的值
          *
          * @event
-         * @fires Calendar#change
          * @param {Object} e 事件对象
-         * @param {MonthView} e.target 当前改变值的MonthView控件
          * @ignore
          */
         function syncMonthView(e) {
@@ -261,7 +257,6 @@ define(
         /**
          * 初始化输入框的的value以及各种状态值
          * 因为initOptions生命周期在initExtensions之前，所以需要手动触发一次
-         * @param {Object} e 事件对象
          * @ignore
          */
         function initExtendsionOptions() {
@@ -280,7 +275,7 @@ define(
             if (value) {
                 properties.rawValue = moment(value).format(this.displayFormat);
             }
-            // 当前行为
+            // 是否是当前textbox激活
             var currentElement = document.activeElement;
             if (currentElement && currentElement !== calendarInput.getFocusTarget()) {
                 calendarInput.setProperties(properties);
