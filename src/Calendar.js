@@ -80,6 +80,13 @@ define(
                                 range: calendar.range
                             }
                         );
+                        var nextMonthView = calendar.getChild('nextMonthView');
+                        nextMonthView && nextMonthView.setProperties(
+                            {
+                                rawValue: calendar.rawValue,
+                                range: calendar.range
+                            }
+                        );
                         this.show();
                     }
                     else {
