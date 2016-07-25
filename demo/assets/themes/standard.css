@@ -5142,6 +5142,10 @@ hr.ui-divider-dashed {
   -o-text-overflow: ellipsis;
   white-space: nowrap;
 }
+.ui-calendar-input {
+  background: transparent;
+  padding: 0;
+}
 .ui-calendar-arrow {
   position: absolute;
   right: 1em;
