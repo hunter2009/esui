@@ -192,7 +192,7 @@ define(
         function initEvents() {
             // 输入框的时候，变为hover聚焦更好一点
             var calendarInput = this.getChild('calendarInput');
-            calendarInput.on('focus', u.bind(this.layer.show, this.layer));
+            calendarInput.on('focus', u.bind(this.layer.toggle, this.layer));
 
             this.on('change', u.bind(syncTextBox, this));
             calendarInput.on('input', u.bind(syncMonthView, this));
@@ -275,7 +275,7 @@ define(
             if (value) {
                 properties.rawValue = moment(value).format(this.displayFormat);
             }
-            // 是否是当前textbox激活
+            // 是否是当前textbox获得焦点
             var currentElement = document.activeElement;
             if (currentElement && currentElement !== calendarInput.getFocusTarget()) {
                 calendarInput.setProperties(properties);
