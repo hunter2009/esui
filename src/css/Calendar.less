@@ -8,7 +8,6 @@
 
 @import "Variable.less";
 
-
 @esui-calendar-height: 2.5em;
 @esui-calendar-horizontal-padding: 1em;
 @esui-calendar-border-radius: 0;
@@ -37,6 +36,11 @@
 .@{ui-class-prefix}-calendar-text {
     padding-right: @esui-calendar-text-right-padding;
     .ellipsis();
+}
+
+.@{ui-class-prefix}-calendar-input {
+    background: transparent;
+    padding: 0;
 }
 
 .@{ui-class-prefix}-calendar-arrow {
