@@ -53,7 +53,7 @@ define(
                     var errorMessage = '';
                     var range = control.range;
                     if (!moment(value, control.paramFormat).isValid()) {
-                         errorMessage = '输入格式错误';
+                        errorMessage = '输入格式错误';
                         validate = false;
                     }
                     else {
@@ -134,9 +134,9 @@ define(
                         return;
                     }
 
-                    u.unbind(initStructure, target);
-                    u.unbind(initEvents, target);
-                    target.dateRange = false;
+                    u.unbind(initStructure, this.target);
+                    u.unbind(initEvents, this.target);
+                    this.target.dateRange = false;
 
                     this.helper.removePartClasses('input');
                     this.helper.disposeChildren();
@@ -238,6 +238,7 @@ define(
 
         /**
          * 需要去监听properties changes来实现拓展状态属性的切换
+         *
          * @param {Object} e 事件对象
          * @ignore
          */
@@ -245,7 +246,7 @@ define(
             var changes = e.changes;
             if (changes.length) {
                 var properties = {};
-                u.each(changes, function(change) {
+                u.each(changes, function (change) {
                     if (u.contains(copyStatus, change.name)) {
                         properties[change.name] = change.newValue;
                     }
@@ -257,6 +258,7 @@ define(
         /**
          * 初始化输入框的的value以及各种状态值
          * 因为initOptions生命周期在initExtensions之前，所以需要手动触发一次
+         *
          * @ignore
          */
         function initExtendsionOptions() {
@@ -266,6 +268,7 @@ define(
         /**
          * 设置输入框的属性
          * 如果当前输入框获取焦点则认为该行为由输入框触发，不进行任何处理
+         *
          * @param {Object} properties 待设置的属性
          * @ignore
          */
